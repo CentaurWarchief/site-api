@@ -21,7 +21,7 @@ type storage struct {
 
 func (s *storage) FindAll() ([]*Entity, error) {
 	result := []*Entity{}
-	if err := s.coll.Find(bson.M{}).Sort("display_order").All(&result); err != nil {
+	if err := s.coll.Find(bson.M{}).Sort("order").All(&result); err != nil {
 		return nil, err
 	}
 	return result, nil
